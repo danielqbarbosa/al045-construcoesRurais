@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Apresentação:  Daniel de Queiroz Barbosa  Marcos Vinicius Strieder  Rafael Ribeiro" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link href="09_pilares_files/slidy-2/styles/slidy.css" rel="stylesheet" />
+  <script src="09_pilares_files/slidy-2/scripts/slidy.js"></script>
+  <script src="09_pilares_files/htmlwidgets-1.2/htmlwidgets.js"></script>
+  <script src="09_pilares_files/jquery-1.12.4/jquery.min.js"></script>
+  <link href="09_pilares_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+  <script src="09_pilares_files/datatables-binding-0.4/datatables.js"></script>
+  <link href="09_pilares_files/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="09_pilares_files/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+  <script src="09_pilares_files/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+  <link href="09_pilares_files/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+  <script src="09_pilares_files/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="estilo.css" />
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Construções Rurais e Ambiência<br>
+<h2>
+Exercício sobre Pilares
+</h2></h1>
+  <p class="author">
+Apresentação: <br>Daniel de Queiroz Barbosa<br> Marcos Vinicius Strieder<br> Rafael Ribeiro<br><br><br>
+  </p>
+  <p class="date">20 de abril de 2018</p>
+</div>
+<div class="slide section level1">
+
+<h2>
+R-Markdown: Slidy Html
+</h2>
+<h2>
+Dicas: Modos de exibição
+</h2>
+<p>Os seguintes caracteres simples habilitam modos de exibição alternativos:</p>
+<p>‘C’ exibir índice<br />
+‘F’ Alterna a exibição do rodapé<br />
+‘A’ Alterna a exibição do slide corrente vs todos os slides (útil para impressão de páginas)<br />
+‘S’ diminuir fontes<br />
+‘B’ aumentar fontes</p>
+</div>
+<div id="pilares.-exercicio" class="slide section level1">
+<h1>PILARES. Exercício</h1>
+<ol style="list-style-type: decimal">
+<li>Dimensionar um pilar para sustentar uma massa de 8400 kg a uma altura de 3,80m. Utilizar <span class="math inline">\(F_{ck} = 130 \ kg/cm^2\)</span> e o aço CA-32. Determinar as quantidades necessárias dos componentes do concreto para a construção de 16 pilares, usando o traço 1:2,5:4.</li>
+</ol>
+</div>
+<div id="calculo-das-resistencias" class="slide section level1">
+<h1>1. Cálculo das resistências</h1>
+<p>. Valor de resistência do aço CA-32, conforme a tabela xx: <span class="math inline">\(F&#39;_{yd} = 2783 kg/cm^2\)</span></p>
+<p>. Resistência de cálculo do concreto: <span class="math display">\[F_{cd} = \frac{F_{ck}}{\lambda_c} = \frac{130 kg/cm^2}{1,4} = 92,86 kg/cm^2\]</span></p>
+<p>. Cálculo da Carga (Peso x Fator de segurança): <span class="math display">\[P_d = Massa * 1,4 = 8400 kg/cm^2 * 1,4 = 11760 kg\]</span></p>
+</div>
+<div id="secao-de-concreto-teoricamente-necessario" class="slide section level1">
+<h1>2. Seção de Concreto Teoricamente Necessário:</h1>
+<p><span class="math display">\[A_{c1} = \frac{1,2 . P_d}{0,85.F_{cd} + l . F&#39;_{yd}} = \frac{1,2 * 11760}{0,85*92,86 + 0,008*2783} = \frac{14112}{101,20} = 139,45 cm^2\]</span> Sendo:</p>
+<ul>
+<li><span class="math inline">\(A_{c1}\)</span>: Seção de concreto teoricamente necessário;<BR></li>
+<li><span class="math inline">\(P_d\)</span>: Carga suportada;</li>
+<li><span class="math inline">\(F_{cd}\)</span>: resistência de cálculo do concreto;</li>
+<li><span class="math inline">\(l\)</span>: percentual mínimo da seção transversal de ferro na armadura (0,8% a 6%);</li>
+<li><span class="math inline">\(F&#39;_{cd}\)</span>: resistência de cálculo do aço.</li>
+</ul>
+</div>
+<div id="lado-do-pilar" class="slide section level1">
+<h1>3. Lado do Pilar</h1>
+<p><span class="math display">\[b = \sqrt{A_{c1}} = \sqrt{139,45} = 11,81 cm\]</span> . Para que não haja Flambagem, a esbeltez deve ser menor que 40. Calcular usando a equação do Grau de Esbeltez:</p>
+<p><span class="math display">\[\lambda = \frac{3,46* L_{fl}}{b} \le 40\]</span></p>
+<p><span class="math inline">\(\lambda = \frac{3,46* 380 cm}{11,81} = 111,32 cm\)</span> <span class="math inline">\(\__&gt;\)</span> Não ok, pois é maior que 40.</p>
+<p>. Calculando o lado a partir do maior valor de Flambagem: <span class="math display">\[b = \frac{3,46* L_{fl}}{\lambda} = \frac{3,46* 380cm}{40} = 32,87 cm\]</span> Corrigindo a seção do concreto: <span class="math inline">\(A_{cl(corrigido)} = b^2 = (32,87)^2 = 1080 cm^2\)</span></p>
+</div>
+<div id="calculo-da-secao-do-aco" class="slide section level1">
+<h1>4. Cálculo da Seção do Aço:</h1>
+<p>Se <span class="math inline">\(A_{cl(corrigido)} &gt; A_{cl(teórico)}\)</span> então:<br />
+<span class="math display">\[A_s = l*A_{c1} = 0,8\%*1080cm^2 = 0,008 * 1080 = 8,64 cm^2\]</span><br />
+. Em geral são utilizadas 4 barras de ferro para a armadura. Segundo a tabela XX, o diâmetro da barra de ferro CA-32 onde <span class="math inline">\(A_s = 8,64 cm^2\)</span> corresponde a 19,05 mm.</p>
+<p>. Cálculo do diâmetro dos <strong>Estribos</strong>:<br />
+<span class="math display">\[e = \frac{1}{4}* A_S = \frac{19,05}{4} = 4,76 mm\]</span></p>
+</div>
+<div id="volume-do-pilar" class="slide section level1">
+<h1>5. Volume do Pilar</h1>
+<p><span class="math display">\[V = b_1 * b_2 * L = (0,3287 m)^2 * 3,80m = 0,41 m^3\]</span></p>
+<p>Onde:<br />
+. V: volume do pilar (<span class="math inline">\(m^3\)</span>);<br />
+. <span class="math inline">\(b_1, b_2\)</span>: lados do pilar (m);<br />
+. L: altura do pilar (m)</p>
+</div>
+<div id="quantidade-dos-materiais" class="slide section level1">
+<h1>6. Quantidade dos materiais</h1>
+<p>Com base nos parâmetros do traço, calcular o peso de <span class="math inline">\(1 m^3\)</span> de cimento conforme a equação abaixo:</p>
+<p><span class="math display">\[P_c = \frac{2400}{0,856+(1,014*a)+(0,835*b)+(2,65*R_{a/c})}\]</span> <span class="math display">\[P_c = \frac{2400}{0,856+(1,014*2,5)+(0,835*4)+(2,65*0,5)} = \frac{2400}{8,056} = 297,91 kg\]</span></p>
+<p>Onde:<br />
+. <span class="math inline">\(P_c\)</span>: peso de <span class="math inline">\(1,0 m^3\)</span> de cimento;<br />
+. a: partes de areia (aglomerado miúdo);<br />
+. b: partes de brita (aglomerado graúdo);<br />
+. <span class="math inline">\(R_{a/c}\)</span>: relação água/cimento (mínimo 0,48, máximo 0,70). No exercício foi definido como 0,5.</p>
+<h2 id="quantidade-de-sacos-de-cimento-por-m3">Quantidade de sacos de cimento por <span class="math inline">\(m^3\)</span></h2>
+<p><span class="math display">\[Sc = \frac{P_c}{50 kg} = \frac{297,91 kg}{50 kg} = 5,96 sacos\]</span></p>
+<h2 id="volume-de-areia">Volume de areia</h2>
+<p><span class="math display">\[A = \frac{P_c*1,014*a}{1,42} = \frac{297,91*1,014*2,5}{1,42} = \frac{755,20}{1,42} = 531,83 Litros\]</span></p>
+<h2 id="volume-de-brita">Volume de brita</h2>
+<p><span class="math display">\[B = \frac{P_c * 0,835 * b}{1,42}= \frac{297,91 * 0,835 * 4}{1,42} = \frac{995,02}{1,42}=700,72 Litros\]</span></p>
+<h2 id="volume-de-agua">Volume de Água</h2>
+<p><span class="math display">\[Agua = P_c * R_{a/c} = 297,91 * 0,5 = 148,96 Litros\]</span></p>
+<!-- $ $ -->
+<!-- \begin{array} -->
+<!-- {lccl} -->
+<!-- Material & Volume \ (1,0m^3) & Cada \ pilar & Para \ 16 \ pilares \\ -->
+<!-- Cimento  & 297,71 kg         & 122,14 kg  & 1954,29 kg = 39,10 \ sacos \ cimento \\ -->
+<!-- Areia    & 531,83 L          & 218,10 L   & 3488,80 L = 1 \ caçamba \ de \ 4,0m^3 \\ -->
+<!-- Brita    & 700,72 L          & 287,30 L   & 4596,72 L = 1 \  caçamba \ de \ 5,0 m^3\\ -->
+<!-- Água     & 148,96 L          & 61,07 L    & 977,12 L   -->
+<!-- \end{array} -->
+<!-- $ $ -->
+<div id="htmlwidget-e73bf11f2d97f04591d3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e73bf11f2d97f04591d3">{"x":{"filter":"none","caption":"<caption style=\"text-align: left;\">Tabela 1: Quantidade de Materiais<\/caption>","autoHideNavigation":true,"data":[["1","2","3","4"],["Cimento (kg)","Areia (Litros)","Brita (Litros)","Água (Litros)"],[1,2.5,4,0.5],[297.71,531.83,700.72,148.96],[122.14,218.1,287.3,61.07],[1954.24,3488.8,4596.8,977.12]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Material<\/th>\n      <th>Traço<\/th>\n      <th>Volume (1 m³)<\/th>\n      <th>Cada Pilar<\/th>\n      <th>Para 16 pilares<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="slide section level1">
+
+<center>
+<h1>
+Obrigado!!!
+</h1>
+</center>
+<p><img src="img/Moto%20Trike%2003.jpg" style="display: block; margin: auto;" /></p>
+<p><strong>Bibliografia:</strong></p>
+<ul>
+<li>Apostila da disciplina.</li>
+</ul>
+<p><strong>Ferramenta de edição:</strong></p>
+<ul>
+<li>RStudio IDE. Version 1.0.153 – © 2009-2017 RStudio, Inc.</li>
+<li>R-Markdown. Apresentação no formato “Slidy Html”.</li>
+</ul>
+</div>
+
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "09_pilares_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+</body>
+</html>
